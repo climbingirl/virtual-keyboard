@@ -160,3 +160,46 @@ function createKeys(keys, lang) {
 }
 
 renderApp();
+
+// add keyboard events
+
+const KEYS = document.querySelectorAll(".key");
+const KEYS_UP = document.querySelectorAll(".caseUp");
+const KEYS_DOWN = document.querySelectorAll(".caseDown");
+const KEYS_CAPS = document.querySelectorAll(".caps");
+const KEYS_SHIFT_CAPS = document.querySelectorAll(".shiftCaps");
+const KEY_CAPS_LOCK = document.querySelector(".caps_lock_key");
+
+window.addEventListener("keydown", function (e) {
+    if(e.code === "CapsLock") {
+        KEY_CAPS_LOCK.classList.toggle("active");
+    }
+
+    for(let i = 0; i < KEYS.length; i++) {
+        if(e.code === KEYS[i].dataset.keyCode && e.code !== "CapsLock") {
+            KEYS[i].classList.add('active');
+        }
+        if(e.code === "CapsLock") {
+            KEYS_DOWN[i].classList.toggle("hidden");
+            KEYS_CAPS[i].classList.toggle("hidden");
+        }
+        if(e.key === "Shift") {
+            KEYS_DOWN[i].classList.add("hidden");
+            KEYS_UP[i].classList.remove("hidden");
+        }
+    }
+
+
+});
+
+window.addEventListener("keyup", function (e) {
+    for(let i = 0; i < KEYS.length; i++) {
+        if(e.code === KEYS[i].dataset.keyCode && e.code !== "CapsLock") {
+            KEYS[i].classList.remove('active')
+        }
+        if(e.key === "Shift") {
+            KEYS_DOWN[i].classList.remove("hidden");
+            KEYS_UP[i].classList.add("hidden");
+        }
+    }
+});
