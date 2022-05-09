@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+  
+*,
+*::before,
+*::after {
+        box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.textarea {
+    max-width: 1020px;
+    width: 100%;
+    height: 115px;
+    margin-bottom: 30px;
+    outline: none;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+    background-color: #f7f7f7;
+    padding: 10px;
+}
+
+.keyboard {
+    max-width: 1020px;
+    width: 100%;
+    background-color: gray;
+}
+
+.keyboard__row {
+    display: flex;
+}
+
+.key {
+    width: 58px;
+    height: 58px;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 0;
+    background-color: #444;
+    color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    transition: .1s;
+}
+
+.key:hover {
+    background-color: rgba(104, 49, 49, 0.8);
+}
+
+.backspace_key {
+    width: 154px;
+}
+
+.caps_lock_key,
+.enter_key,
+.shift_key {
+    width: 139px;
+}
+
+.tab_key,
+.delete_key,
+.ctrl_key {
+    width: 73px;
+}
+
+.space_key {
+    width: 454px;
+}
+
+.key.active {
+    background-color: rgb(104, 49, 49);
+    border-radius:50px
+}
+
+.hidden {
+    display: none;
+}
