@@ -156,8 +156,6 @@ const KEYS_RU_ARR = [
 
 const BODY = document.querySelector("body");
 
-// render layout
-
 function renderApp() {
     const CONTAINER = document.createElement("div");
     CONTAINER.classList.add("container");
@@ -244,8 +242,6 @@ function createKeys(keys) {
 
 renderApp();
 
-// add keyboard events
-
 const KEYS = document.querySelectorAll(".key");
 const KEYS_EN = document.querySelectorAll(".language__en");
 const KEYS_RU = document.querySelectorAll(".language__ru");
@@ -278,8 +274,6 @@ window.addEventListener("keydown", function (e) {
             KEYS_RU[i].classList.toggle("hidden");
         }
     }
-
-
 });
 
 window.addEventListener("keyup", function (e) {
